@@ -1,14 +1,18 @@
+package carreteras;
 import java.util.ArrayList;
 import java.io.*;
-public class OtherClass {
+import java.util.Scanner;
+public class Carreteras{
     static ArrayList<String> RutaA= new ArrayList<String>();
     static ArrayList<String> RutaB= new ArrayList<String>();
     static ArrayList<String> RutaC= new ArrayList<String>();
     
     static BufferedReader br= new BufferedReader (new InputStreamReader (System.in));
-    static BufferedWriter wr= new BufferedWriter (new OutputStreamWriter(System.out));
+    static BufferedWriter bw= new BufferedWriter (new OutputStreamWriter(System.out));
     
     public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+          
         try{
         //Ruta A
         RutaA.add("Santa Marta");
@@ -33,20 +37,17 @@ public class OtherClass {
         RutaC.add("Santa Marta");
         
         
-        int i=1;    
+          int i=0;
         
         do{
-            System.out.println("Menu\n" + "1. Camino con ciudad de origen y destino\n2. Camino con ciudad de origen, destino y hora\n3. Carretera que usara\n4. Lista de carreteras en mantenimiento con hora de duracion. \n5.Salir   ");
+            System.out.println("Menu\n" + "1. Camino con ciudad de origen y destino\n2. Camino con ciudad de origen, destino y hora\n3. Carretera que usara\n4. Lista de carreteras en mantenimiento con hora de duracion. \n5. Salir   ");
             System.out.print("Respuesta: ");
-            //i = br.read();
-            System.out.println(i);
+            i=sc.nextInt();
             switch(i){
                 
             case 1:
                 
                 ArrayList <String> Camino = new ArrayList<String>();
-                ArrayList <String> Camino2 = new ArrayList<String>();
-                ArrayList <String> Camino3 = new ArrayList<String>();
                 System.out.print("Digite La Ciudad De Destino: ");
                 String Destino2;
                 Destino2 = br.readLine();
@@ -55,59 +56,190 @@ public class OtherClass {
                 String Origen;
                 Origen = br.readLine();
                 
-//                if(RutaA.contains(Destino2) && RutaA.contains(Origen)){
-//                    Camino.clear();
-//                    int D2 = RutaA.indexOf(Destino2);
-//                    System.out.println(D2);
-//                    int O = RutaA.indexOf(Origen);
-//                    System.out.println(O);
-//                    for(int a=0;a>=D2;a++){
-//                        Camino.add(a,RutaA.get(a));
-//                        System.out.print( "["+ Camino.get(O) +"]");
-//                        O++;
-//                    }
-//                }else{
-                    if(RutaB.contains(Destino2) && RutaB.contains(Origen)){
-                        
-                        int D2 = RutaB.indexOf(Destino2);
-                        System.out.println(D2);
-                        int O = RutaB.indexOf(Origen);
-                        System.out.println(O);
-                        for(int b=0;b<=D2;b++){
-                            Camino.add(RutaB.get(O));
-                            O++;
-                            System.out.print( "["+ Camino2.get(O) +"]");
-                        }
+                if(RutaA.contains(Destino2) && RutaA.contains(Origen)){
+                    Camino.clear();
+                    int D2 = RutaA.indexOf(Destino2);
+                    System.out.println(D2);
+                    int O = RutaA.indexOf(Origen);
+                    System.out.println(O);
+                    for(int a=0;a>=D2;a++){
+                        Camino.add(a,RutaA.get(a));
+                        System.out.print( "["+ Camino.get(O) +"]");
+                        O++;
                     }
+                }
+                
+                if(RutaB.contains(Destino2) && RutaB.contains(Origen)){
+                    Camino.clear();
+                    int D2 = RutaB.indexOf(Destino2);
+                    System.out.println(D2);
+                    int O = RutaB.indexOf(Origen);
+                    System.out.println(O);
+                    for(int b=0;b<=D2;b++){
+                        Camino.add(b,RutaB.get(O));
+                        System.out.print( "["+ Camino.get(b) +"]");
+                        O++;
+                    }
+                }
                         
-                        if(RutaC.contains(Destino2) && RutaC.contains(Origen)){
-                            Camino.clear();
-                            int D2 = RutaC.indexOf(Destino2);
-                            System.out.println(D2);
-                            int O = RutaC.indexOf(Origen);
-                            System.out.println(O);
-                            
-                            for(int a=0;a<=D2;a++){
-                                Camino.add(a,RutaC.get(a));
-                                O++;
-                                System.out.print( "["+ Camino3.get(O) +"]");
+                if(RutaC.contains(Destino2) && RutaC.contains(Origen)){
+                    Camino.clear();
+                    int D2 = RutaC.indexOf(Destino2);
+                    System.out.println(D2);
+                    int O = RutaC.indexOf(Origen);
+                    System.out.println(O);
 
-                            }
-                        }
-                    
-                
-                
-                
-                
+                    for(int a=0;a<=D2;a++){
+                        Camino.add(a,RutaC.get(O));
+                        O++;
+                        System.out.print( "["+ Camino.get(a) +"]");                         
+                    }
+                }
                 
                 break;
+                
             case 2:
+                
               
                 
                 break;
             case 3:
-              
+                ArrayList <String> Camino2 = new ArrayList<String>();
+                System.out.print("Digite La Ciudad De Destino: ");
+                String Destino;
+                Destino = br.readLine();
                 
+                System.out.print("Digite La Ciudad De Origen: ");
+                String Origen2;
+                Origen2 = br.readLine();
+                
+                if(RutaA.contains(Destino) && RutaA.contains(Origen2)){
+                    Camino2.clear();
+                    int D2 = RutaA.indexOf(Destino);
+                    System.out.println(D2);
+                    int O = RutaA.indexOf(Origen2);
+                    System.out.println(O);
+                    for(int a=0;a>=D2;a++){
+                        Camino2.add(a,RutaA.get(a));
+                        System.out.print( "["+ Camino2.get(O) +"]");
+                        O++;
+                    }
+                }
+                
+                if(RutaB.contains(Destino) && RutaB.contains(Origen2)){
+                    Camino2.clear();
+                    int D2 = RutaB.indexOf(Destino);
+                    System.out.println(D2);
+                    int O = RutaB.indexOf(Origen2);
+                    System.out.println(O);
+                    for(int b=0;b<=D2;b++){
+                        Camino2.add(b,RutaB.get(O));
+                        System.out.print( "["+ Camino2.get(b) +"]");
+                        O++;
+                    }
+
+
+                }
+                        
+                if(RutaC.contains(Destino) && RutaC.contains(Origen2)){
+                    Camino2.clear();
+                    int D2 = RutaC.indexOf(Destino);
+                    System.out.println(D2);
+                    int O = RutaC.indexOf(Origen2);
+                    System.out.println(O);
+                    for(int a=0;a<=D2;a++){
+                        Camino2.add(a,RutaC.get(O));
+                        O++;
+                        System.out.print( "["+ Camino2.get(a) +"]");
+
+                    }
+                }
+              //SEPARAR
+//                if(RutaA.contains(Destino2) && RutaB.contains(Origen)){
+//                    Camino2.clear();
+//                    int D2 = RutaC.indexOf(Destino2);
+//                    System.out.println(D2);
+//                    int O = RutaC.indexOf(Origen);
+//                    System.out.println(O);
+//
+//                    for(int a=0;a<=D2;a++){
+//                        Camino2.add(a,RutaC.get(O));
+//                        O++;
+//                        System.out.print( "["+ Camino2.get(a) +"]");
+//
+//                    }
+//                }
+//                
+//                if(RutaA.contains(Destino2) && RutaC.contains(Origen)){
+//                    Camino2.clear();
+//                    int D2 = RutaC.indexOf(Destino2);
+//                    System.out.println(D2);
+//                    int O = RutaC.indexOf(Origen);
+//                    System.out.println(O);
+//
+//                    for(int a=0;a<=D2;a++){
+//                        Camino2.add(a,RutaC.get(O));
+//                        O++;
+//                        System.out.print( "["+ Camino2.get(a) +"]");
+//
+//                    }
+//                }
+//                if(RutaB.contains(Destino2) && RutaA.contains(Origen)){
+//                    Camino2.clear();
+//                    int D2 = RutaC.indexOf(Destino2);
+//                    System.out.println(D2);
+//                    int O = RutaC.indexOf(Origen);
+//                    System.out.println(O);
+//
+//                    for(int a=0;a<=D2;a++){
+//                        Camino2.add(a,RutaC.get(O));
+//                        O++;
+//                        System.out.print( "["+ Camino2.get(a) +"]");
+//
+//                    }
+//                }
+//                if(RutaB.contains(Destino2) && RutaC.contains(Origen)){
+//                    Camino2.clear();
+//                    int D2 = RutaC.indexOf(Destino2);
+//                    System.out.println(D2);
+//                    int O = RutaC.indexOf(Origen);
+//                    System.out.println(O);
+//
+//                    for(int a=0;a<=D2;a++){
+//                        Camino2.add(a,RutaC.get(O));
+//                        O++;
+//                        System.out.print( "["+ Camino2.get(a) +"]");
+//
+//                    }
+//                }
+//                if(RutaC.contains(Destino2) && RutaA.contains(Origen)){
+//                    Camino2.clear();
+//                    int D2 = RutaC.indexOf(Destino2);
+//                    System.out.println(D2);
+//                    int O = RutaC.indexOf(Origen);
+//                    System.out.println(O);
+//
+//                    for(int a=0;a<=D2;a++){
+//                        Camino2.add(a,RutaC.get(O));
+//                        O++;
+//                        System.out.print( "["+ Camino2.get(a) +"]");
+//
+//                    }
+//                }
+//                if(RutaC.contains(Destino2) && RutaB.contains(Origen)){
+//                    Camino2.clear();
+//                    int D2 = RutaC.indexOf(Destino2);
+//                    System.out.println(D2);
+//                    int O = RutaC.indexOf(Origen);
+//                    System.out.println(O);
+//
+//                    for(int a=0;a<=D2;a++){
+//                        Camino2.add(a,RutaC.get(O));
+//                        O++;
+//                        System.out.print( "["+ Camino2.get(a) +"]");
+//
+//                    }
+//                }
                 break;
             case 4:
               	ArrayList<String> Rutas= new ArrayList<String>();
@@ -133,14 +265,12 @@ public class OtherClass {
               	HoraMante.add("6 am A 11 am");
              	HoraMante.add("10 pm A 2 am");
              	HoraMante.add("10 am A 1 pm");
-              
-              	for(int p = 0;i < Rutas.size()-1;i++){
+              System.out.println("Ciudad        Hora Mantenimiento");
+              	for(int p = 0;p < Rutas.size()-1;p++){
               	
-                System.out.println("Ciudad: ["+ Rutas.get(i) +"]"+"Hora de mantenimiento: ["+ HoraMante.get(i)+"]");
-                
+                System.out.print("["+ Rutas.get(p) +"]/");
+                System.out.print("/["+ HoraMante.get(p)+"]\n");
                 }
-              	
-              
                 
                 break;
                 
@@ -154,5 +284,7 @@ public class OtherClass {
     
         }catch(Exception ex){}
     
-    }
+    
 }
+    }
+
