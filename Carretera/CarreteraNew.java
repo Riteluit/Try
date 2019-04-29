@@ -110,9 +110,9 @@ public class OtherClass {
                 
                 break;
             case 4:
-              	ArrayList<String> Rutas = new ArrayList<String>();
+              	ArrayList<String> Rutas= new ArrayList<String>();
               
-              	ArrayList<String> HoraMante = new ArrayList<String>(); 
+              	ArrayList<String> HoraMante= new ArrayList<String>(); 
 
               	Rutas.add("Riohacha");
               	Rutas.add("Santa Marta");
@@ -134,9 +134,9 @@ public class OtherClass {
              	HoraMante.add("10 pm A 2 am");
              	HoraMante.add("10 am A 1 pm");
               
-              	for(int i = 0;i < Rutas.lenght()-1;i++){
+              	for(int p = 0;i < Rutas.size()-1;i++){
               	
-                System.out.prinln("Ciudad: ["+Ruta.get(i)+"]"+"Hora de mantenimiento: ["+HoraMante(i)+"]");
+                System.out.println("Ciudad: ["+ Rutas.get(i) +"]"+"Hora de mantenimiento: ["+ HoraMante.get(i)+"]");
                 
                 }
               	
