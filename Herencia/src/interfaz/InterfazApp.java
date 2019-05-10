@@ -5,7 +5,7 @@ public class InterfazApp {
     private Estudiante miE;
     
     public static void main(String[] args) {
-        Estudiante Estd1= new Estudiante("Ing. Sistemas", 3, "Camilo","Rojas", 18, 1001067727);
+        Estudiante Estd1= new Estudiante("Ing. Sistemas", 3, "Camilo","Rojas", 18, 1000899846);
         Estudiante Estd2= new Estudiante("Aux. Medicia", 1, "Sofia","Gomez", 19, 1001879652);
         Estudiante Estd3= new Estudiante("Ing. Civil", 4, "Migel","Perez", 21, 1000354683);
         
